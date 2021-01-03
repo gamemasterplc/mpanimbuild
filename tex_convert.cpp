@@ -156,7 +156,7 @@ static void ConvertTextureCI8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
     uint8_t *pal_buf = new uint8_t[256 * 4]();
     uint8_t *data_buf =  new uint8_t[w * h]();
     exq_data *exq_data = exq_init();
-    exq_feed(exq_data, src, w*h*4);
+    exq_feed(exq_data, src, w*h);
     exq_quantize_hq(exq_data, 256);
     exq_get_palette(exq_data, pal_buf, 256);
     exq_map_image_ordered(exq_data, w, h, src, data_buf);
@@ -184,7 +184,7 @@ static void ConvertTextureCI4(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
     uint8_t *pal_buf = new uint8_t[16 * 4]();
     uint8_t *data_buf = new uint8_t[w * h]();
     exq_data *exq_data = exq_init();
-    exq_feed(exq_data, src, w * h * 4);
+    exq_feed(exq_data, src, w * h);
     exq_quantize_hq(exq_data, 16);
     exq_get_palette(exq_data, pal_buf, 16);
     exq_map_image_ordered(exq_data, w, h, src, data_buf);
