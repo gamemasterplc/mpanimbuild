@@ -103,7 +103,7 @@ static void ConvertTextureRGBA8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst
 {
 	for (int32_t i = 0; i < h; i++) {
 		for (int32_t j = 0; j < w; j++) {
-			int32_t block_pitch = w / 4;
+			int32_t block_pitch = (w + 3) / 4;
 			int32_t block_y_idx = i / 4;
 			int32_t block_x_idx = j / 4;
 			int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -138,7 +138,7 @@ static void ConvertTextureRGB5A3(int32_t w, int32_t h, uint8_t *src, uint8_t *ds
 {
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 4;
+            int32_t block_pitch = (w + 3) / 4;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 4;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -166,7 +166,7 @@ static void ConvertTextureCI8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
     }
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -194,7 +194,7 @@ static void ConvertTextureCI4(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
     }
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 8;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -215,7 +215,7 @@ static void ConvertTextureIA8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 {
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 4;
+            int32_t block_pitch = (w + 3) / 4;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 4;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -236,7 +236,7 @@ static void ConvertTextureIA4(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 {
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -256,7 +256,7 @@ static void ConvertTextureI8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 {
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -276,7 +276,7 @@ static void ConvertTextureI4(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 8;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -300,7 +300,7 @@ static void ConvertTextureA8(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 {
     for (int32_t i = 0; i < h; i++) {
         for (int32_t j = 0; j < w; j++) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 4;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
@@ -442,7 +442,7 @@ static void ConvertTextureCMPR(int32_t w, int32_t h, uint8_t *src, uint8_t *dst)
 {
     for (int32_t i = 0; i < ((h + 7) / 8) * 8; i += 8) {
         for (int32_t j = 0; j < ((w + 7) / 8) * 8; j += 8) {
-            int32_t block_pitch = w / 8;
+            int32_t block_pitch = (w + 7) / 8;
             int32_t block_y_idx = i / 8;
             int32_t block_x_idx = j / 8;
             int32_t block_idx = (block_pitch * block_y_idx) + block_x_idx;
